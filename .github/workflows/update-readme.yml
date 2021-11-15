@@ -15,61 +15,19 @@ jobs:
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@master
         with:
-          filename: metrics.classic.svg
+          filename: metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: header, repositories
           plugin_lines: yes
-          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
-          output_action: pull-request
-          delay: 120
-      - name: 📅 Isocalendar plugin (half year)
-        if: ${{ success() || failure() }}
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.plugin.isocalendar.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
           plugin_isocalendar: yes
-          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
-          output_action: pull-request
-          delay: 120
-      - name: 🎩 Notable contributions (indepth)
-        if: ${{ success() || failure() }}
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.plugin.notable.indepth.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
           plugin_notable: yes
           plugin_notable_indepth: yes
           plugin_notable_repositories: yes
-          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
-          output_action: pull-request
-          delay: 120
-      - name: ⏰ WakaTime
-        if: ${{ success() || failure() }}
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.plugin.wakatime.svg
-          token: NOT_NEEDED
           plugin_wakatime: yes
           plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
           plugin_wakatime_token: WAKATIME_API_KEY
-          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
-          output_action: pull-request
-          delay: 120
-      - name: 💡 Coding habits (charts)
-        if: ${{ success() || failure() }}
-        uses: lowlighter/metrics@master
-        with:
-          filename: metrics.plugin.habits.charts.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
           plugin_habits: yes
           plugin_habits_facts: no
           plugin_habits_charts: yes
           plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
-          config_timezone: Europe/Paris
           output_action: pull-request
-          delay: 120
-
