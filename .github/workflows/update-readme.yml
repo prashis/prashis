@@ -4,7 +4,7 @@
 name: Metrics
 on:
   schedule: 
-    - cron: "* */6 * * *"
+    - cron: "30 6 * * *"
   workflow_dispatch:
 jobs:
   github-metrics:
@@ -15,15 +15,43 @@ jobs:
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@master
         with:
-          filename: metrics.svg
+          filename: metrics.classic.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: header, repositories
+          base: activity, community, metadata
           plugin_lines: yes
+          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
+          delay: 120
+      - name: 📅 Isocalendar plugin
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.isocalendar.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
           plugin_isocalendar: yes
+          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
+          delay: 120
+      - name: 🈷️ Languages (most used)
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.languages.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, gnuplot
+          plugin_languages_limit: 4
+          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
+          delay: 120
+      - name: ⏰ WakaTime
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.wakatime.svg
+          token: NOT_NEEDED
           plugin_wakatime: yes
           plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
           plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
-          plugin_habits: yes
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
+          use_mocked_data: yes
           plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
+          delay: 120
