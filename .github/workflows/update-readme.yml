@@ -30,4 +30,3 @@ jobs:
           plugin_habits_facts: no
           plugin_habits_charts: yes
           plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
-          output_action: pull-request
