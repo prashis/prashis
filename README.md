@@ -1,1 +1,7 @@
-![Metrics](https://github.com/prashis/prashis/blob/main/metrics.svg)
+![Metrics](/metrics.plugin.isocalendar.svg)
+
+![Metrics](/metrics.classic.svg)
+
+![Metrics](/metrics.plugin.languages.svg)
+
+![Metrics](/metrics.plugin.wakatime.svg)
