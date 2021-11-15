@@ -9,27 +9,67 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
+    if: "github.repository == 'prashis/prashis'"
     steps:
-      - name: Metrics
-        uses: lowlighter/metrics@latest
+      - name: 📗 Classic template
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@master
         with:
-          filename: github-metrics.svg
+          filename: metrics.classic.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          user: prashis
-          template: classic
-          base: header
-          config_timezone: Asia/Calcutta
+          base: header, repositories
+          plugin_lines: yes
+          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
+          output_action: pull-request
+          delay: 120
+      - name: 📅 Isocalendar plugin (half year)
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.isocalendar.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
           plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
-          plugin_wakatime: yes
-          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
-          plugin_wakatime_days: 7
-          plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
-          plugin_wakatime_limit: 5
-          plugin_wakatime_url: https://wakatime.com
-          plugin_wakatime_user: current
+          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
+          output_action: pull-request
+          delay: 120
+      - name: 🎩 Notable contributions (indepth)
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.notable.indepth.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
           plugin_notable: yes
-          plugin_notable_filter: stars:>500
-          plugin_notable_from: organization
-          plugin_notable_repositories: yes
           plugin_notable_indepth: yes
+          plugin_notable_repositories: yes
+          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
+          output_action: pull-request
+          delay: 120
+      - name: ⏰ WakaTime
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.wakatime.svg
+          token: NOT_NEEDED
+          plugin_wakatime: yes
+          plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
+          plugin_wakatime_token: WAKATIME_API_KEY
+          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
+          output_action: pull-request
+          delay: 120
+      - name: 💡 Coding habits (charts)
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.habits.charts.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_habits: yes
+          plugin_habits_facts: no
+          plugin_habits_charts: yes
+          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
+          config_timezone: Europe/Paris
+          output_action: pull-request
+          delay: 120
+
