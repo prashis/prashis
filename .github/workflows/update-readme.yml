@@ -25,7 +25,7 @@ jobs:
           plugin_notable_repositories: yes
           plugin_wakatime: yes
           plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
-          plugin_wakatime_token: WAKATIME_API_KEY
+          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
           plugin_habits: yes
           plugin_habits_facts: no
           plugin_habits_charts: yes
