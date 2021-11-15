@@ -1,16 +1,39 @@
-name: Update README
+# Visit https://github.com/lowlighter/metrics/blob/master/action.yml for full reference
+
+name: Metrics
 
 on:
+  # Schedule updates (each hour)
+  schedule: [{cron: "* */6 * * *"}]
+  # Lines below let you run workflow manually and on each commit
   workflow_dispatch:
-  schedule:
-    # Runs at 12am UTC
-    - cron: "* */6 * * *"
+  # push: {branches: ["master", "main"]}
 
 jobs:
-  build:
-    name: Update this repo's README with recent activity
+  github-metrics:
     runs-on: ubuntu-latest
     steps:
-      - uses: athul/waka-readme@master
+      - uses: lowlighter/metrics@latest
         with:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          # Your GitHub token
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # Options
+          user: prashis
+          template: classic
+          base: ""
+          config_timezone: Asia/Calcutta
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          plugin_wakatime: yes
+          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
+          plugin_wakatime_days: 7
+          plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
+          plugin_wakatime_limit: 5
+          plugin_wakatime_url: https://wakatime.com
+          plugin_wakatime_user: current
+          plugin_notable: yes
+          plugin_notable_filter: stars:>500
+          plugin_notable_from: organization
+          plugin_notable_repositories: yes
+          plugin_notable_indepth: yes
