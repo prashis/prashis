@@ -5,3 +5,5 @@
 ![Metrics](https://github.com/prashis/prashis/blob/main/metrics.plugin.wakatime.svg)
 
 ![Metrics](https://github.com/prashis/prashis/blob/main/metrics.plugin.habits.charts.svg)
+
+![Metrics](https://github.com/prashis/prashis/blob/main/metrics.classic.svg)
