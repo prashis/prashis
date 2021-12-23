@@ -11,6 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     if: "github.repository == 'prashis/prashis'"
     steps:
+      - name: 📅 Isocalendar plugin
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.isocalendar.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year # Display full year instead of half year
+          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
+          delay: 120
       - name: 🈷️ Languages (most used)
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@master
