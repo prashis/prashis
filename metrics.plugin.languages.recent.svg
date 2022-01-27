@@ -16,16 +16,16 @@
             </section>
             <section class="column">
                 <h3 class="field">Recently used languages</h3>
-                <small>estimation from 282 edited files from 46 commits over last 13 days</small>
+                <small>estimation from 282 edited files from 48 commits over last 14 days</small>
                 <svg class="bar" xmlns="http://www.w3.org/2000/svg" width="460" height="8">
                     <mask id="languages-bar">
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="254.70796022361847" height="8" fill="#2b7489"/>
-                    <rect mask="url(#languages-bar)" x="254.70796022361847" y="0" width="151.36100529362292" height="8" fill="#dea584"/>
-                    <rect mask="url(#languages-bar)" x="406.0689655172414" y="0" width="39.197744026121796" height="8" fill="#f1e05a"/>
-                    <rect mask="url(#languages-bar)" x="445.2667095433632" y="0" width="14.733290456636817" height="8" fill="#f34b7d"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="254.68764534164566" height="8" fill="#2b7489"/>
+                    <rect mask="url(#languages-bar)" x="254.68764534164566" y="0" width="151.37598337538964" height="8" fill="#dea584"/>
+                    <rect mask="url(#languages-bar)" x="406.06362871703533" y="0" width="39.20162287863045" height="8" fill="#f1e05a"/>
+                    <rect mask="url(#languages-bar)" x="445.2652515956658" y="0" width="14.734748404334274" height="8" fill="#f34b7d"/>
                 </svg>
                 <div class="row fill-width">
                     <section>
@@ -64,7 +64,7 @@
                             </div>
                             <small>
                                 <div>33.2 kB</div>
-                                <div>32.9%</div>
+                                <div>32.91%</div>
                             </small>
                         </div>
                         <div class="field language details">
