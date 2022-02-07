@@ -1,4 +1,4 @@
-![Metrics - Iso Calendar](/metrics.plugin.isocalendar.svg)
+<!-- ![Metrics - Iso Calendar](/metrics.plugin.isocalendar.svg) -->
 <!-- --- -->
 <!-- ![Metrics - Most Recently Used Languages](/metrics.plugin.languages.recent.svg) -->
 <!-- --- -->
