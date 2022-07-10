@@ -15,9 +15,9 @@ jobs:
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@master
         with:
-          filename: metrics.plugin.isocalendar.svg
+          filename: docs/metrics.plugin.isocalendar.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: "/docs"
+          base: ""
           plugin_isocalendar: yes
           plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
           delay: 120
@@ -25,9 +25,9 @@ jobs:
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@master
         with:
-          filename: metrics.plugin.languages.recent.svg
+          filename: docs/metrics.plugin.languages.recent.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: "/docs"
+          base: ""
           plugin_languages: yes
           plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, gnuplot, gherkin, powershell
           plugin_languages_aliases: RenderScript:Rust
@@ -40,9 +40,9 @@ jobs:
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@master
         with:
-          filename: metrics.plugin.languages.svg
+          filename: docs/metrics.plugin.languages.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: "/docs"
+          base: ""
           plugin_languages: yes
           plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, gnuplot, gherkin, powershell
           plugin_languages_aliases: RenderScript:Rust
@@ -53,9 +53,9 @@ jobs:
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@master
         with:
-          filename: metrics.plugin.wakatime.svg
+          filename: docs/metrics.plugin.wakatime.svg
           token: NOT_NEEDED
-          base: "/docs"
+          base: ""
           plugin_wakatime: yes
           plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
           plugin_wakatime_url: https://wakapi.dev
