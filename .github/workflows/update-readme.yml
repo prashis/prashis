@@ -17,7 +17,7 @@ jobs:
         with:
           filename: metrics.plugin.isocalendar.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
+          base: "/docs"
           plugin_isocalendar: yes
           plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
           delay: 120
@@ -27,7 +27,7 @@ jobs:
         with:
           filename: metrics.plugin.languages.recent.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
+          base: "/docs"
           plugin_languages: yes
           plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, gnuplot, gherkin, powershell
           plugin_languages_aliases: RenderScript:Rust
@@ -42,7 +42,7 @@ jobs:
         with:
           filename: metrics.plugin.languages.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
+          base: "/docs"
           plugin_languages: yes
           plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, gnuplot, gherkin, powershell
           plugin_languages_aliases: RenderScript:Rust
@@ -55,6 +55,7 @@ jobs:
         with:
           filename: metrics.plugin.wakatime.svg
           token: NOT_NEEDED
+          base: "/docs"
           plugin_wakatime: yes
           plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
           plugin_wakatime_url: https://wakapi.dev
