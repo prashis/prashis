@@ -16,15 +16,15 @@
             </section>
             <section class="column">
                 <h3 class="field">Recently used languages</h3>
-                <small>estimation from 17.1kb of code in 30 edited files across 19 commits over last 10 days</small>
+                <small>estimation from 18.7kb of code in 31 edited files across 22 commits over last 11 days</small>
                 <svg class="bar" xmlns="http://www.w3.org/2000/svg" width="460" height="8">
                     <mask id="languages-bar">
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="241.37715694330322" height="8" fill="#178600"/>
-                    <rect mask="url(#languages-bar)" x="241.37715694330322" y="0" width="172.8874281018899" height="8" fill="#89e051"/>
-                    <rect mask="url(#languages-bar)" x="414.2645850451931" y="0" width="45.735414954806906" height="8" fill="#00ADD8"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="194.23168473948692" height="8" fill="#178600"/>
+                    <rect mask="url(#languages-bar)" x="194.23168473948692" y="0" width="139.11928061359427" height="8" fill="#89e051"/>
+                    <rect mask="url(#languages-bar)" x="333.35096535308116" y="0" width="126.6490346469188" height="8" fill="#00ADD8"/>
                 </svg>
                 <div class="row fill-width">
                     <section>
@@ -37,7 +37,7 @@
                             </div>
                             <small>
                                 <div>3.19 kB</div>
-                                <div>52.47%</div>
+                                <div>42.22%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -48,8 +48,8 @@
                                 Go
                             </div>
                             <small>
-                                <div>605 bytes</div>
-                                <div>9.94%</div>
+                                <div>2.08 kB</div>
+                                <div>27.53%</div>
                             </small>
                         </div>
                     </section>
@@ -63,7 +63,7 @@
                             </div>
                             <small>
                                 <div>2.29 kB</div>
-                                <div>37.58%</div>
+                                <div>30.24%</div>
                             </small>
                         </div>
                     </section>
