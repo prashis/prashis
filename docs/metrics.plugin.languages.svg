@@ -21,12 +21,18 @@
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="152.99011783669087" height="8" fill="#dea584"/>
-                    <rect mask="url(#languages-bar)" x="152.99011783669087" y="0" width="121.56490147744479" height="8" fill="#89e051"/>
-                    <rect mask="url(#languages-bar)" x="274.5550193141357" y="0" width="109.5856669279663" height="8" fill="#3178c6"/>
-                    <rect mask="url(#languages-bar)" x="384.14068624210205" y="0" width="75.85931375789801" height="8" fill="#00ADD8"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="191.95348162858235" height="8" fill="#00ADD8"/>
+                    <rect mask="url(#languages-bar)" x="191.95348162858235" y="0" width="106.75377511434081" height="8" fill="#dea584"/>
+                    <rect mask="url(#languages-bar)" x="298.70725674292316" y="0" width="84.82581971714652" height="8" fill="#89e051"/>
+                    <rect mask="url(#languages-bar)" x="383.53307646006965" y="0" width="76.46692353993032" height="8" fill="#3178c6"/>
                 </svg>
                 <div class="field center horizontal-wrap fill-width">
+                    <div class="field center no-wrap language">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                            <path fill="#00ADD8" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                        </svg>
+                        Go
+                    </div>
                     <div class="field center no-wrap language">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                             <path fill="#dea584" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
@@ -44,12 +50,6 @@
                             <path fill="#3178c6" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                         </svg>
                         TypeScript
-                    </div>
-                    <div class="field center no-wrap language">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill="#00ADD8" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
-                        </svg>
-                        Go
                     </div>
                 </div>
             </section>
