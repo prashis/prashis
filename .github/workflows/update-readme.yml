@@ -16,7 +16,7 @@ jobs:
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@master
         with:
-          filename: docs/metrics.plugin.isocalendar.svg
+          filename: docs/metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
           template: classic
           base: ""
@@ -26,11 +26,12 @@ jobs:
           plugin_isocalendar_duration: half-year
           # 🈷️ Languages (recently used & most used)
           plugin_languages: yes
-          plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, gnuplot, gherkin, powershell, Jupyter Notebook
-          plugin_languages_aliases: RenderScript:Rust
+          plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, gnuplot, gherkin, powershell
+          plugin_languages_aliases: RenderScript:Rust, Jupyter Notebook:Python
           plugin_languages_sections: recently-used, most-used
           plugin_languages_details: bytes-size, percentage
-          plugin_languages_limit: 4
+          plugin_languages_recent_days: 7
+          plugin_languages_limit: 8
           # ⏰ WakaTime
           plugin_wakatime: yes
           plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
@@ -38,17 +39,17 @@ jobs:
           plugin_wakatime_token: ${{ secrets.WAKAPI_API_KEY }}
           use_mocked_data: yes
           plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
-          delay: 120
-#       - name: 🈷️ Languages (most used)
-#         if: ${{ success() || failure() }}
-#         uses: lowlighter/metrics@master
-#         with:
-#           filename: docs/metrics.plugin.languages.svg
-#           token: ${{ secrets.METRICS_TOKEN }}
-#           base: ""
-#           plugin_languages: yes
-#           plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, gnuplot, gherkin, powershell, 'Jupyter Notebook'
-#           plugin_languages_aliases: RenderScript:Rust, JupyterNotebook:Python
-#           plugin_languages_limit: 4
-#           plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
-#           delay: 120
+          delay: 60
+      - name: 🈷️ Languages (most used)
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@master
+        with:
+          filename: docs/metrics.plugin.languages.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, gnuplot, gherkin, powershell, 'Jupyter Notebook'
+          plugin_languages_aliases: RenderScript:Rust, JupyterNotebook:Python
+          plugin_languages_limit: 4
+          plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
+          delay: 20
