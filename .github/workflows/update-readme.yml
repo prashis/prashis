@@ -32,8 +32,7 @@ jobs:
           plugin_languages_sections: recently-used, most-used
           plugin_languages_limit: 8
           plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
-          plugin_wakatime_url: https://wakapi.dev
-          plugin_wakatime_token: ${{ secrets.WAKAPI_API_KEY }}
+          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
           plugins_errors_fatal: ${{ github.repository == 'prashis/prashis' }}
           delay: 60
       - name: 🈷️ Languages (most used)
